@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VoiceSampleViewController" customModule="MainProject" customModuleProvider="target">
+            <connections>
+                <outlet property="againBtn" destination="gLe-R1-WHT" id="lDa-fh-yT7"/>
+                <outlet property="bottomView" destination="eVs-7F-XJ8" id="lxy-eb-ULX"/>
+                <outlet property="circleImageView" destination="ZZH-gN-vq1" id="jnG-pQ-Twd"/>
+                <outlet property="nextBtn" destination="M5T-fy-iQA" id="liX-Ra-0qT"/>
+                <outlet property="recordButton" destination="tPS-9p-i1u" id="hai-gJ-zBI"/>
+                <outlet property="timeLabel" destination="Gow-2w-XRf" id="Dzx-Ha-Caf"/>
+                <outlet property="tipLabel" destination="AnS-lp-p8j" id="eyN-s6-ucz"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eVs-7F-XJ8">
+                    <rect key="frame" x="0.0" y="400" width="375" height="267"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gow-2w-XRf">
+                            <rect key="frame" x="0.0" y="30" width="375" height="40.5"/>
+                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
+                            <color key="textColor" red="0.16470588235294117" green="0.16862745098039217" blue="0.18431372549019609" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="点击开始录制" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AnS-lp-p8j">
+                            <rect key="frame" x="0.0" y="142" width="375" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="w4c-av-NX2"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tPS-9p-i1u" customClass="WaveButton" customModule="MainProject" customModuleProvider="target">
+                            <rect key="frame" x="154" y="70.5" width="67" height="66.5"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="tPS-9p-i1u" secondAttribute="height" multiplier="1:1" id="uC9-dB-Hel"/>
+                            </constraints>
+                            <state key="normal" backgroundImage="mic"/>
+                            <state key="disabled" image="mic"/>
+                            <state key="selected" backgroundImage="MIc-录音中"/>
+                        </button>
+                        <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="椭圆-5" translatesAutoresizingMaskIntoConstraints="NO" id="ZZH-gN-vq1">
+                            <rect key="frame" x="154" y="70.5" width="67" height="66.5"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="ZZH-gN-vq1" secondAttribute="height" multiplier="1:1" id="B8z-nl-Mmt"/>
+                            </constraints>
+                        </imageView>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M5T-fy-iQA">
+                            <rect key="frame" x="212.5" y="207" width="142.5" height="40"/>
+                            <color key="backgroundColor" red="1" green="0.0" blue="0.45882352941176469" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="播放"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="nextAction:" destination="-1" eventType="touchUpInside" id="jVJ-UZ-6Pe"/>
+                            </connections>
+                        </button>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gLe-R1-WHT">
+                            <rect key="frame" x="20" y="207" width="142.5" height="40"/>
+                            <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="X4i-pm-gQb"/>
+                            </constraints>
+                            <state key="normal" title=" 重录">
+                                <color key="titleColor" red="1" green="0.0" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                    <integer key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="refreshRecord:" destination="-1" eventType="touchUpInside" id="nzF-OS-SRs"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="Gow-2w-XRf" secondAttribute="trailing" id="1RZ-Mg-vBx"/>
+                        <constraint firstItem="tPS-9p-i1u" firstAttribute="centerX" secondItem="eVs-7F-XJ8" secondAttribute="centerX" id="3xy-tg-aMx"/>
+                        <constraint firstAttribute="bottom" secondItem="gLe-R1-WHT" secondAttribute="bottom" constant="20" id="46Q-K4-ZCf"/>
+                        <constraint firstItem="Gow-2w-XRf" firstAttribute="top" secondItem="eVs-7F-XJ8" secondAttribute="top" constant="30" id="4p6-nn-2je"/>
+                        <constraint firstItem="Gow-2w-XRf" firstAttribute="leading" secondItem="eVs-7F-XJ8" secondAttribute="leading" id="9kQ-CK-Zgf"/>
+                        <constraint firstItem="ZZH-gN-vq1" firstAttribute="width" secondItem="tPS-9p-i1u" secondAttribute="width" id="BEw-OL-1J8"/>
+                        <constraint firstItem="tPS-9p-i1u" firstAttribute="height" secondItem="eVs-7F-XJ8" secondAttribute="height" multiplier="0.25" id="BFg-bf-PWL"/>
+                        <constraint firstAttribute="trailing" secondItem="M5T-fy-iQA" secondAttribute="trailing" constant="20" id="Ds0-cr-9gV"/>
+                        <constraint firstItem="AnS-lp-p8j" firstAttribute="leading" secondItem="eVs-7F-XJ8" secondAttribute="leading" id="Jwe-na-1zy"/>
+                        <constraint firstItem="tPS-9p-i1u" firstAttribute="centerY" secondItem="eVs-7F-XJ8" secondAttribute="centerY" constant="-30" id="L1Q-IK-KKO"/>
+                        <constraint firstItem="M5T-fy-iQA" firstAttribute="width" secondItem="gLe-R1-WHT" secondAttribute="width" id="LHQ-y5-VBY"/>
+                        <constraint firstItem="M5T-fy-iQA" firstAttribute="leading" secondItem="gLe-R1-WHT" secondAttribute="trailing" constant="50" id="UH9-ib-p1W"/>
+                        <constraint firstItem="ZZH-gN-vq1" firstAttribute="centerX" secondItem="tPS-9p-i1u" secondAttribute="centerX" id="Xwk-OU-7KZ"/>
+                        <constraint firstItem="gLe-R1-WHT" firstAttribute="leading" secondItem="eVs-7F-XJ8" secondAttribute="leading" constant="20" id="g1R-2P-3Qs"/>
+                        <constraint firstItem="AnS-lp-p8j" firstAttribute="top" secondItem="tPS-9p-i1u" secondAttribute="bottom" constant="5" id="hdn-Sy-JCe"/>
+                        <constraint firstItem="ZZH-gN-vq1" firstAttribute="centerY" secondItem="tPS-9p-i1u" secondAttribute="centerY" id="iao-uL-efJ"/>
+                        <constraint firstItem="M5T-fy-iQA" firstAttribute="bottom" secondItem="gLe-R1-WHT" secondAttribute="bottom" id="nHq-cd-kjI"/>
+                        <constraint firstAttribute="trailing" secondItem="AnS-lp-p8j" secondAttribute="trailing" id="oAP-7E-eI2"/>
+                        <constraint firstItem="tPS-9p-i1u" firstAttribute="top" secondItem="Gow-2w-XRf" secondAttribute="bottom" id="oFE-SS-wXa"/>
+                        <constraint firstItem="M5T-fy-iQA" firstAttribute="top" secondItem="gLe-R1-WHT" secondAttribute="top" id="p6M-ZX-4V0"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="eVs-7F-XJ8" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="JJz-HS-Wka"/>
+                <constraint firstItem="eVs-7F-XJ8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Nne-9k-mVG"/>
+                <constraint firstItem="eVs-7F-XJ8" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.4" id="PTC-iN-We0"/>
+                <constraint firstItem="eVs-7F-XJ8" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="y2h-iP-ViI"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="136.80000000000001" y="100.29985007496252"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="MIc-录音中" width="103" height="103"/>
+        <image name="mic" width="102.5" height="102.5"/>
+        <image name="椭圆-5" width="25" height="25"/>
+    </resources>
+</document>
