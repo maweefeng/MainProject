@@ -38,8 +38,7 @@ class DispatchQueueViewController: UIViewController {
         thirdImageV.contentMode = .scaleAspectFit
         thirdImageV.layer.masksToBounds = true
         thirdImageV.translatesAutoresizingMaskIntoConstraints = false
-
-        
+    
         let stackView = UIStackView(arrangedSubviews: [firstImageV,secondImageV,thirdImageV])
         stackView.backgroundColor = .white
         stackView.distribution = .fillProportionally

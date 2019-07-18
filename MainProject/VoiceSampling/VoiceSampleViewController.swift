@@ -94,6 +94,7 @@ class VoiceSampleViewController: UIViewController,SweetRulerDelegate,AVAudioPlay
     }
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
     
+        player.stop()
         print("播放完成")
     }
     
@@ -174,6 +175,7 @@ extension VoiceSampleViewController{
             UIApplication.shared.beginReceivingRemoteControlEvents()
             try audioPlayer = AVAudioPlayer(contentsOf: soundFileURL!, fileTypeHint: AVFileType.mp3.rawValue)
             audioPlayer.prepareToPlay()
+            audioPlayer.delegate = self
             audioPlayer.volume = 1
             audioPlayer.numberOfLoops = 1
             audioPlayer.play()
@@ -182,6 +184,11 @@ extension VoiceSampleViewController{
         }
     }
  
+    @objc  func stopPlay()  {
+        
+        audioPlayer.stop()
+        
+    }
 
     
     
@@ -334,7 +341,7 @@ extension VoiceSampleViewController {
             }
         }
         let session = AVAudioSession.sharedInstance()
-        do { try  session.setCategory(.playAndRecord ,options: .defaultToSpeaker) }
+        do { try  session.setCategory(.record ,options: .defaultToSpeaker) }
         catch { print("session config failed") }
         do {
             self.recorder = try AVAudioRecorder(url: self.directoryURL()!, settings: self.recorderSetting)
